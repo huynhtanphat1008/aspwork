@@ -1,0 +1,36 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="DemoWeb.index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My First Website</title>
+</head>
+<body>
+     <form id="form1" runat="server">
+    <table  align="center" >
+        <tr>
+            <td>
+                    <asp:Label ID="Label1" runat="server" Text="Favours" Width="100px"></asp:Label>
+                    <asp:DropDownList ID="menu_drop" runat="server" Width="200px" OnSelectedIndexChanged="menu_drop_SelectedIndexChanged">
+                        <asp:ListItem>Music</asp:ListItem>
+                        <asp:ListItem Value="Others">Others</asp:ListItem>
+                    </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   <asp:Label ID="Label2" runat="server" Width="100px" Text="Others"></asp:Label>
+                   <asp:TextBox ID="txtOthers" runat="server" Width="191px"></asp:TextBox>
+                   <asp:CustomValidator ID="cusValid1" ControlToValidate="txtOthers" runat="server" ErrorMessage="* This feild is required" OnServerValidate="CustomValidator1_ServerValidate" ForeColor="Red" Font-Names="verdana" Font-Size="10pt"></asp:CustomValidator>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
